@@ -9,11 +9,12 @@ describe('LibraryEntryView', function() {
     });
     view = new LibraryEntryView({model: model});
     view.render();
+
   });
 
   // This spec passes already, but it's mutually exclusive with the one below.
   // Comment it out when implementing the song queue.
-  it ('plays clicked songs', function() {
+  xit ('plays clicked songs', function() {
     sinon.spy(SongModel.prototype, 'play');
 
     view.$el.children().first().click();
