@@ -13,15 +13,8 @@ events: {
   },
 
   initialize: function() {
-    // var sq = this.get('songQueue');
-    // if(sq.length > 0){
-    //   var targetSong = this.get("songQueue").first()
-    //   this.setSong(targetSong);
-    // }
-    // var currsong = this.model.get('currentSong');
-    // console.log(currsong);
+
     this.model.on("change:currentSong", this.model.play);
-    // this.setSong(currsong);
     
   },
 
