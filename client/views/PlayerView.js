@@ -8,6 +8,7 @@ var PlayerView = Backbone.View.extend({
 events: {
     'ended': function() {
       this.model.ended();
+      // this.model.play();
     }
   },
 
@@ -17,12 +18,11 @@ events: {
     //   var targetSong = this.get("songQueue").first()
     //   this.setSong(targetSong);
     // }
-    this.collection.on("add", this.model.play, this)
-
-    console.log(this.collection);
-    this.model.on("change:finishedPlaying", function(){
-      this.model.dequeue();     // this.model.dequeue(this.collection[0]) //FIX THIS LATER MAYBE?!
-    })
+    // var currsong = this.model.get('currentSong');
+    // console.log(currsong);
+    this.model.on("change:currentSong", this.model.play);
+    // this.setSong(currsong);
+    
   },
 
   setSong: function(song) {
